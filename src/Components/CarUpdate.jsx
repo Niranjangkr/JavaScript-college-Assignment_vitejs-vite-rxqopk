@@ -16,6 +16,14 @@ class CarUpdate extends React.Component {
     }, 2000);
   }
 
+  getSnapshotBeforeUpdate(pp, ps) {
+    document.getElementById('div1').innerHTML = `<p > Previous State: ${ps.color}</p>`;
+  }
+
+  componentDidUpdate(){
+    document.getElementById("div2").innerHTML = `<p>Current State: ${this.state.color}</p>`
+  }
+
   render() {
     return (
       <div>
